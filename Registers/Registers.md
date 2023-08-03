@@ -337,7 +337,7 @@ _start:
 
 ### Summary
 
-x86 assembly language provides direct access to the CPU's instruction set and allows for precise control over hardware resources. By understanding the basics of data manipulation, memory access, control flow, and procedures, you can create efficient and optimized x86 assembly programs. While writing in assembly can be challenging, it offers unparalleled insights into low-level computer operations and performance optimization. Happy coding in x86 assembly! 🚀✨
+In x86 assembly language, registers are fundamental to efficient programming and are essential to understand when writing low-level code. By mastering the usage of registers, you gain the power to perform various computations, manipulate data, and optimize code execution. Happy coding 🚀✨
 
 
-In x86 assembly language, registers are fundamental to efficient programming and are essential to understand when writing low-level code. By mastering the usage of registers, you gain the power to perform various computations, manipulate data, and optimize code execution.
+
