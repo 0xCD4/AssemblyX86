@@ -1,6 +1,6 @@
 🏁 **Welcome to the World of x86 Assembly!** 🏁
 
-![x86 Assembly Banner](https://gfycat.com/valuableanguishedbooby)
+![x86 Assembly Banner](https://i.stack.imgur.com/GEAeI.gif)
 
 👋 Greetings, fellow programmers! If you've ever been curious about diving into the enchanting realm of low-level programming, look no further! 🧙‍♂️
 
