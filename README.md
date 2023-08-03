@@ -24,8 +24,6 @@ This captivating repository is your gateway to mastering the ancient art of x86 
 
 🎉 **Ready to Begin the Quest?** 🎉
 
-👉 Clone this magical repository to your local cauldron with a simple `git clone` command! 🧙‍♂️🔮
-
 🔥 Embrace the x86 Assembly adventure, and harness the raw potency of the CPU to cast captivating and optimized spells! ⚡🏰
 
 🚀 May your code soar to new heights of performance and brilliance! Happy coding, brave programmers! 🧙‍♂️🔥💻
