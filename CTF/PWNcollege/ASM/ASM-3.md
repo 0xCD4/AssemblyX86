@@ -36,5 +36,5 @@ The `rax` register will now hold the result of `f(x)` as required by the challen
 
 ---
 
-Flag: pwn.college{gChn_M0Wb8kfByI2dRrAdrQAWN0.0lN5EDLxUjNyEzW}
+The flag: pwn.college{gChn_M0Wb8kfByI2dRrAdrQAWN0.0lN5EDLxUjNyEzW}
 
