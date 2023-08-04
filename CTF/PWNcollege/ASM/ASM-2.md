@@ -22,4 +22,4 @@ The `rdi` register will now hold the result of adding `0x331337` to its original
 
 
 
-Flag: pwn.college{QvjyJnljKvDhgH8llaoSe_8eW8V.0VN5EDLxUjNyEzW}
+The flag: pwn.college{QvjyJnljKvDhgH8llaoSe_8eW8V.0VN5EDLxUjNyEzW}
