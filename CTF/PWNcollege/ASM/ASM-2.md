@@ -1,5 +1,3 @@
----
-
 ## Level 2 - Add 0x331337 to rdi
 
 In this challenge, we are asked to add the value `0x331337` to the `rdi` register.
@@ -22,6 +20,6 @@ The above assembly code starts by moving the immediate value `0x331337` into the
 
 The `rdi` register will now hold the result of adding `0x331337` to its original value, as required by the challenge.
 
----
+
 
 Flag: pwn.college{QvjyJnljKvDhgH8llaoSe_8eW8V.0VN5EDLxUjNyEzW}
