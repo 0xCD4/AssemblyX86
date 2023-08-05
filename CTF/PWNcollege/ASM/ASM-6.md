@@ -43,8 +43,9 @@ After executing this code, the `rax` register will hold the remainder of `rdi` a
 The `rax` register will now hold the result of `rdi % 256`, and the `rbx` register will hold the result of `rsi % 65536`, as required by the challenge.
 
 ---
+![image](https://github.com/0xCD4/AssemblyX86/assets/116346668/e33e711b-d4db-4c29-9482-e9439cef8309)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ea68cd0a-66f8-49d1-9216-936149ac01cd/Untitled.png)
+
 
 The Flag: pwn.college{khWuhXBy5bT5j3XW_iDOOrMlUou.0VO5EDLxUjNyEzW}
 
