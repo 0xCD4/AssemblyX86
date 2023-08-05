@@ -34,6 +34,5 @@ lea rax, [rsi]  ; Set rax to a pointer address that points to the value in rsi
 
 The value in the `rax` register after executing the provided code is `0x01120a4284201150`. The final flag can be derived from this result.
 
-Flag: pwn.college{MWhT4yMOdF8VG0f3CluXY71Sz4t.0VMwIDLxUjNyEzW}
+The Flag: pwn.college{MWhT4yMOdF8VG0f3CluXY71Sz4t.0VMwIDLxUjNyEzW}
 
-You can assemble the code and pass the raw bytes to the provided program to verify the result. If you have any further questions or need additional assistance, feel free to ask!
