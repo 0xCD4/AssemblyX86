@@ -1,4 +1,4 @@
-## Level 8 - Bitwise AND and Pointer Calculation (Explanation)
+## Level 8 - Bitwise AND and Pointer Calculation 
 
 In this challenge, we are given the values of `rdi` and `rsi`, and we need to perform a bitwise AND operation between `rdi` and `rsi`, and then store the result in `rax`. Additionally, we need to set `rax` to a pointer address that points to the result.
 
