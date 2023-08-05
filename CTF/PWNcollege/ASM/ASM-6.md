@@ -44,5 +44,7 @@ The `rax` register will now hold the result of `rdi % 256`, and the `rbx` regist
 
 ---
 
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ea68cd0a-66f8-49d1-9216-936149ac01cd/Untitled.png)
+
 The Flag: pwn.college{khWuhXBy5bT5j3XW_iDOOrMlUou.0VO5EDLxUjNyEzW}
 
