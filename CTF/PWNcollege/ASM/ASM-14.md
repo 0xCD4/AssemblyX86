@@ -47,9 +47,6 @@ push rax
 """))
 ```
 
-# Receive and print the output of the process
-print(process.recvallS())
-
 
 ## Final Result
 
