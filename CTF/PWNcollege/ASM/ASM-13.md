@@ -31,8 +31,6 @@ After executing these instructions, the value `0xc0ffee0000` will be stored at t
 
 # In detailed way
 
-Certainly! Let's go into more detail for each step of the solution:
-
 ## Step 1: Set [rdi] = 0xdeadbeef00001337
 
 ```assembly
