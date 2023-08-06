@@ -28,6 +28,27 @@ The `push` instruction stores the value in the `rax` register back onto the stac
 
 After executing these instructions, the value at the top of the stack will be updated with the result of the subtraction of the original value at the top of the stack and the value in `rdi`.
 
+### The code
+
+import pwn
+
+# Set the architecture to amd64
+pwn.context.update(arch="amd64")
+
+# Create a process to interact with the level
+process = pwn.process("/challenge/run")
+
+# Assemble the assembly code and send it as raw bytes
+process.write(pwn.asm("""
+pop rax
+sub rax, rdi
+push rax
+"""))
+
+# Receive and print the output of the process
+print(process.recvallS())
+
+
 ## Final Result
 
 The stack will have its top value replaced with the result of subtracting the value in `rdi` from the original top value.
