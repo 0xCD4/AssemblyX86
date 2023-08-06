@@ -1,17 +1,24 @@
 ## Level 15 
 
-```assembly
 1. In order to swap the values of rdi and rsi, we will use the stack to temporarily store the values.
    Let's push rdi and rsi onto the stack:
 
+```assembly
+
+
 push rdi   ; Push the value of rdi onto the stack
 push rsi   ; Push the value of rsi onto the stack
+```
 
 2. Now, we can pop the values from the stack into rsi and rdi, effectively swapping their values:
 
+```assembly
 pop rdi    ; Pop the top value from the stack into rdi, which will be the previous value of rsi
 pop rsi    ; Pop the second value from the stack into rsi, which will be the previous value of rdi
+
 ```
+
+
 
 This code snippet swaps the values in the `rdi` and `rsi` registers using the stack. It first pushes the values of `rdi` and `rsi` onto the stack, then pops them back into `rsi` and `rdi`, respectively, effectively swapping their values.
 
