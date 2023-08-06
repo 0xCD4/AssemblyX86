@@ -103,6 +103,19 @@ In the previous instruction, we set `rax` to `0x403000`, so this `jmp` will effe
 
 ### Summary:
 
+
+```assembly
+jmp label
+.rept 0x51
+    nop
+.endr
+
+label:
+pop rdi
+mov rax, 0x403000
+jmp rax
+```
+
 In summary, the solution starts with a relative jump to create a gap, followed by popping the top value from the stack into the `rdi` register. Then, it moves the immediate value `0x403000` into the `rax` register and performs an absolute jump to that address. This two-jump trampoline enables the program to execute a specific control flow, achieving the desired behavior for the challenge.
 
 The Flag: flag: pwn.college{4Rj4oGfAUxNLSP-drR9ztZKZ0HC.0FMxIDLxUjNyEzW}
