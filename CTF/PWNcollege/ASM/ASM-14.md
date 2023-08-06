@@ -30,6 +30,7 @@ After executing these instructions, the value at the top of the stack will be up
 
 ### The code
 
+```python
 import pwn
 
 # Set the architecture to amd64
@@ -44,6 +45,7 @@ pop rax
 sub rax, rdi
 push rax
 """))
+```
 
 # Receive and print the output of the process
 print(process.recvallS())
