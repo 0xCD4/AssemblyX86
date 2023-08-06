@@ -1,67 +1,30 @@
-# Level 12 
+# Level 13
 
-To solve this challenge, we are given two addresses (`rdi` and `rsi`) where we need to store specific values.
-
-1. Set [rdi] = 0xdeadbeef00001337:
+## Step 1: Load two consecutive quad words from the address stored in rdi
 
 ```assembly
-mov rax, 0xdeadbeef00001337 ; Load 0xdeadbeef00001337 into rax
-mov [rdi], rax             ; Move the value in rax to the memory address stored in rdi
+mov rax, [rdi]       ; Load the first quad word from the address stored in rdi into rax
+add rax, [rdi+8]    ; Add the second quad word (at offset 8 bytes from rdi) to rax
 ```
 
-Explanation:
-- In the first line, we use the `mov` instruction to load the immediate value `0xdeadbeef00001337` into the `rax` register. Since `rax` is a 64-bit register, it can hold the full value without any issues.
-- In the second line, we use the `mov` instruction again to move the value from `rax` to the memory address stored in the `rdi` register. The square brackets around `rdi` indicate that we are dereferencing the value in `rdi` to get the memory address it points to. This way, we set the value at that memory address to the value stored in `rax`.
+1. The first line uses the `mov` instruction to load the value stored at the memory address in the `rdi` register into the `rax` register. In x86_64, `rdi` is one of the general-purpose registers that can be used to store memory addresses. The square brackets around `rdi` indicate that we are dereferencing `rdi` to access the memory location it points to. Since each quad word is 8 bytes (64 bits), this instruction loads the first quad word from the address stored in `rdi` into the `rax` register.
 
-After executing these instructions, the value `0xdeadbeef00001337` will be stored at the memory address `0x4040b0` (rdi).
+2. The second line uses the `add` instruction to add the value of the second quad word to the `rax` register. The value of the second quad word is located at the memory address `rdi+8`. The `+8` is an offset indicating that we want to access the memory 8 bytes after the address in `rdi`, which corresponds to the second quad word.
 
-2. Set [rsi] = 0xc0ffee0000:
+At this point, the `rax` register contains the sum of the two consecutive quad words from the address stored in `rdi`.
+
+## Step 2: Store the sum at the address in rsi
 
 ```assembly
-mov rax, 0xc0ffee0000 ; Load 0xc0ffee0000 into rax
-mov [rsi], rax        ; Move the value in rax to the memory address stored in rsi
+mov [rsi], rax       ; Store the sum (in rax) at the memory address in rsi
 ```
 
-Explanation:
-- In the first line, we use the `mov` instruction to load the immediate value `0xc0ffee0000` into the `rax` register. Since `rax` is a 64-bit register, it can hold the full value without any issues.
-- In the second line, we use the `mov` instruction again to move the value from `rax` to the memory address stored in the `rsi` register. The square brackets around `rsi` indicate that we are dereferencing the value in `rsi` to get the memory address it points to. This way, we set the value at that memory address to the value stored in `rax`.
+1. The last line uses the `mov` instruction to move the value in the `rax` register (which holds the sum of the two quad words) into the memory address pointed to by the `rsi` register. Similar to `rdi`, `rsi` is another general-purpose register used to store memory addresses. By using the square brackets around `rsi`, we are dereferencing `rsi` to get the memory address where we want to store the sum.
 
-After executing these instructions, the value `0xc0ffee0000` will be stored at the memory address `0x404c60` (rsi).
-
-
-# In detailed way
-
-## Step 1: Set [rdi] = 0xdeadbeef00001337
-
-```assembly
-mov rax, 0xdeadbeef00001337
-mov [rdi], rax
-```
-
-1. We start by using the `mov` instruction to load the immediate value `0xdeadbeef00001337` into the `rax` register. The `mov` instruction is used to move data between operands, and in this case, we are moving a 64-bit immediate value into the 64-bit `rax` register. The `rax` register is commonly used as a general-purpose register in x86_64 architecture.
-
-2. Next, we use the `mov` instruction again to move the value from the `rax` register to the memory address stored in the `rdi` register. The square brackets around `rdi` indicate that we are dereferencing the value in `rdi` to get the memory address it points to. This way, we set the value at that memory address to the value stored in `rax`.
-
-After executing these instructions, the value `0xdeadbeef00001337` will be stored at the memory address `[rdi]`, which is `0x4040b0` in this case.
-
-## Step 2: Set [rsi] = 0xc0ffee0000
-
-```assembly
-mov rax, 0xc0ffee0000
-mov [rsi], rax
-```
-
-1. We start by using the `mov` instruction to load the immediate value `0xc0ffee0000` into the `rax` register. Again, we are moving a 64-bit immediate value into the `rax` register.
-
-2. Next, we use the `mov` instruction again to move the value from the `rax` register to the memory address stored in the `rsi` register. Similar to Step 1, the square brackets around `rsi` indicate that we are dereferencing the value in `rsi` to get the memory address it points to. This way, we set the value at that memory address to the value stored in `rax`.
-
-After executing these instructions, the value `0xc0ffee0000` will be stored at the memory address `[rsi]`, which is `0x404c60` in this case.
+After executing these instructions, the sum of the two consecutive quad words from the address stored in `rdi` will be calculated and stored at the memory address pointed by `rsi`, which is `0x404678` in this case.
 
 ## Final Result
 
-After running both sets of instructions, the memory contents at the addresses `0x4040b0` and `0x404c60` will be modified as follows:
+The sum of the two consecutive quad words from the addresses `0x404320` and `0x404328` will be calculated and stored at the memory address `0x404678`.
 
-- Memory at `0x4040b0`: `0xdeadbeef00001337`
-- Memory at `0x404c60`: `0xc0ffee0000`
-
-Finally, the flag for this level is: `pwn.college{g-fjVH4ktMpsnaz29IuHA0XfCSv.0VNwIDLxUjNyEzW}`.
+The flag for this level is: `pwn.college{gQAei527h6ghMsddYyyFOxCOLUa.0lNwIDLxUjNyEzW}`.
