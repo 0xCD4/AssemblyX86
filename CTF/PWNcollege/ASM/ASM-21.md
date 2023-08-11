@@ -67,3 +67,5 @@ This assembly code counts the consecutive non-zero bytes in a contiguous region 
 9. **Debug Breakpoint (`int3`):** Another debug breakpoint is placed at the end for further debugging purposes.
 
 
+The Flag: pwn.college{4RYtNv1sq1V6j75cy9m8JJD-EKz.0FNxIDLxUjNyEzW}
+
