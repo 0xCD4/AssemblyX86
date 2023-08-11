@@ -43,7 +43,7 @@ done:
 
 ## Assembly Code in Markdown Format
 
-```markdown
+
 # Count Consecutive Non-Zero Bytes
 
 This assembly code counts the consecutive non-zero bytes in a contiguous region of memory using a while-loop structure.
@@ -67,8 +67,5 @@ This assembly code counts the consecutive non-zero bytes in a contiguous region 
 8. **Loop Termination (`done`):** Once the loop terminates (when a zero byte is encountered), the code reaches the `done` label.
 
 9. **Debug Breakpoint (`int3`):** Another debug breakpoint is placed at the end for further debugging purposes.
-```
 
----
 
-This Markdown file provides a comprehensive breakdown of the provided assembly code, explaining each instruction and its purpose in a clear and detailed manner. You can refer to this explanation to better understand how the code works and what each part contributes to the overall functionality.
