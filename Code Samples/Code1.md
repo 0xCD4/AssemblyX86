@@ -89,11 +89,9 @@ The code proceeds as follows:
 5. Prepare to exit the program by setting up the system call number (1 for exit) in `eax`, clearing `ebx`, and making a system call using `int 0x80`.
 
 This assembly code initializes variables, performs a loop involving addition and subtraction, stores the result, and then exits the program.
-```
 
-Absolutely, let's delve even deeper into the explanation of each step in the assembly code:
 
-## Assembly Code Explanation
+## Assembly Code Explanation detailed
 
 ### Data Section
 
