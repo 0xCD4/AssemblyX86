@@ -134,37 +134,37 @@ Please note that the `foo` function is assumed to be defined at address `0x40300
 
 Explanation:
 
-    Debug Breakpoint (int3): This sets a debug breakpoint for debugging purposes, allowing you to halt the execution and inspect the program's state.
+    1. Debug Breakpoint (int3): This sets a debug breakpoint for debugging purposes, allowing you to halt the execution and inspect the program's state.
 
-    Initialize rax and Check rdi: Set the value of the rax register to 0 and compare the value in rdi (src_addr) with 0. If rdi is 0, it jumps to the done label, indicating the end of the string.
+    2. Initialize rax and Check rdi: Set the value of the rax register to 0 and compare the value in rdi (src_addr) with 0. If rdi is 0, it jumps to the done label, indicating the end of the string.
 
-    Loop Structure (loop): The beginning of a loop. Continues until a zero byte is encountered.
+    3. Loop Structure (loop): The beginning of a loop. Continues until a zero byte is encountered.
 
-    Load Byte: Loads the byte from the memory address pointed to by rdi into the lower 8 bits of the rbx register (bl).
+    4. Load Byte: Loads the byte from the memory address pointed to by rdi into the lower 8 bits of the rbx register (bl).
 
-    Check Byte and Jump: Compares the value in bl (loaded byte) with 0. If it's 0, jumps to the done label, indicating the end of the string.
+    5. Check Byte and Jump: Compares the value in bl (loaded byte) with 0. If it's 0, jumps to the done label, indicating the end of the string.
 
-    Compare and Call Function (foo): Compares the loaded byte with 0x5a ('Z' in ASCII). If it's less than or equal to 0x5a, it calls the foo function to convert the uppercase letter to lowercase and increments the counter (rax).
+    6. Compare and Call Function (foo): Compares the loaded byte with 0x5a ('Z' in ASCII). If it's less than or equal to 0x5a, it calls the foo function to convert the uppercase letter to lowercase and increments the counter (rax).
 
-    Restore and Store: Prepares for calling the foo function by clearing rdi, setting up the argument for foo, calling foo, and then stores the result back into memory. Also increments the counter (rax).
+    7. Restore and Store: Prepares for calling the foo function by clearing rdi, setting up the argument for foo, calling foo, and then stores the result back into memory. Also increments the counter (rax).
 
-    Jump Back to Loop (loop): Jumps back to the beginning of the loop to process the next byte in the string.
+    8. Jump Back to Loop (loop): Jumps back to the beginning of the loop to process the next byte in the string.
 
-    Check Greater and Jump: If the loaded byte is greater than 'Z', moves to the next byte in memory and then jumps back to the beginning of the loop.
+    9. Check Greater and Jump: If the loaded byte is greater than 'Z', moves to the next byte in memory and then jumps back to the beginning of the loop.
 
-    Loop Termination (done): When the end of the string is encountered, reaches the done label and executes the debug breakpoint.
+    10. Loop Termination (done): When the end of the string is encountered, reaches the done label and executes the debug breakpoint.
 
-    Return (ret): The ret instruction returns from the function.
+    11. Return (ret): The ret instruction returns from the function.
 
 Summary:
 
 The provided assembly code defines a function str_lower(src_addr) that iterates through a null-terminated string located in memory, converts uppercase letters to lowercase using the foo function, and counts the number of converted characters. The function uses control flow manipulation, the call instruction to call foo, and the stack to preserve and restore registers. The code performs the following steps:
 
-    Initializes counters and checks if src_addr is 0.
-    Loops through the string, processing each character.
-    Converts uppercase characters to lowercase using the foo function.
-    Counts the number of converted characters.
-    Returns the count.
+    1. Initializes counters and checks if src_addr is 0.
+    2. Loops through the string, processing each character.
+    3. Converts uppercase characters to lowercase using the foo function.
+    4. Counts the number of converted characters.
+    5. Returns the count.
 
 The flag: pwn.college{I71rdYxLz3dUdXcGNhGJhWKSrOP.0VNxIDLxUjNyEzW} 
 
