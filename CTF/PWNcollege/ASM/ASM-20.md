@@ -57,6 +57,23 @@ int3                 ; Debug breakpoint
 - Another `int3` instruction is placed after the loop for debugging purposes.
 
 ---
+The code:
+
+```assembly
+mov rax, 0
+mov rcx, 0
+
+
+loop:
+	add rax, [rdi]; rax = rax + rdi
+	add rdi, 8 ; rdi = rdi + 1
+	inc rcx
+	cmp rcx, rsi
+	jl loop
+xor rdx, rdx
+div rsi
+
+```
 
 This assembly code calculates the sum of `n` consecutive quad words stored in memory and then computes the average. The loop iterates `n` times, adding each quad word to the sum, and finally, the sum is divided by `n` to obtain the average. This code snippet demonstrates how control flow manipulation and arithmetic operations are used to achieve the desired computation.
 
