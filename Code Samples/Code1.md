@@ -1,3 +1,4 @@
+```assembly
 section .data
     ; initialize variables
     x dd 0
@@ -27,3 +28,4 @@ _start:
     mov eax, 1
     xor ebx, ebx
     int 0x80
+```
