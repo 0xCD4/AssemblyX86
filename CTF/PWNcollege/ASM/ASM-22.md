@@ -166,5 +166,5 @@ The provided assembly code defines a function str_lower(src_addr) that iterates 
     Counts the number of converted characters.
     Returns the count.
 
-The flag pwn.college{I71rdYxLz3dUdXcGNhGJhWKSrOP.0VNxIDLxUjNyEzW} indicates the successful completion of the level.
+The flag: pwn.college{I71rdYxLz3dUdXcGNhGJhWKSrOP.0VNxIDLxUjNyEzW} 
 
