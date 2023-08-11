@@ -41,8 +41,6 @@ done:
 
 9. **Debug Breakpoint (`int3`):** Another debug breakpoint is placed at the end for further debugging purposes.
 
-## Assembly Code in Markdown Format
-
 
 # Count Consecutive Non-Zero Bytes
 
